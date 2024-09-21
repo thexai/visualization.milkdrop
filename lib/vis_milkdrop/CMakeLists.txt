@@ -48,6 +48,9 @@ else()
   add_definitions(-D_WIN32_WINNT=0x0600 -D_WINDOWS)
 endif()
 remove_definitions(-D_USE_32BIT_TIME_T)
+
+add_compile_options(/Zc:strictStrings-)
+
 add_library(vis_milkdrop STATIC ${SOURCES} ${SHADER_INCLUDES})
 
 target_link_libraries(vis_milkdrop ns-eel2)
